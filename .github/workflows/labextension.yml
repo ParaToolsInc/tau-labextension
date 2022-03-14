@@ -1,0 +1,20 @@
+name: labextension 
+
+on:
+  push:
+    branches:
+    - '*'
+    tags:
+    - '*'
+  pull_request:
+    branches:
+    - '*'
+
+jobs:
+  build:
+    name: labextension
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - run: ls ${{ github.workspace }}
+      - run: ./build_tau_labextension.sh 
