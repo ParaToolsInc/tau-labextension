@@ -1,0 +1,34 @@
+{% set data = load_setup_py_data() %}
+
+package:
+  name: jupyterlab_tau_commander
+  version: {{ data.get('version') }}
+  
+source:
+  path: ../
+
+build:
+  noarch: python
+  entry_points:
+    - tau_commander-lab = jupyterlab_tau_commander.labapp:main
+    - tau_commander-labextension = jupyterlab_tau_commander.labextensionapp:main
+
+requirements:
+  build:
+    - python
+    - pip
+    - nodejs >=8
+    - jupyterlab 3.2.9 
+  run:
+    - python
+    - jupyterlab
+
+    # Python packages corresponding to extensions installed in build.sh
+    - ipywidgets >=7.2
+    - bqplot >=0.10.5
+
+about:
+  home: https://github.com/platinumcd/jupyterlab_tau_commander
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: {{ data.get('description') }}
