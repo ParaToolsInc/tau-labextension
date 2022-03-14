@@ -27,3 +27,9 @@ jobs:
         run: $CONDA/bin/conda install -y -c conda-forge nodejs=17.4.0
       - name: Download JupyterLab
         run: $CONDA/bin/conda install -y jupyterlab=3.2.9
+      - name: Get node modules
+        run: $CONDA/bin/jlpm
+      - name: Build Extension
+        run: $CONDA/bin/jlpm run build
+      - name: List packages
+        run: ls
