@@ -25,8 +25,7 @@ jobs:
       - name: Setup paths
         shell: bash
         run: |
-          echo "::add-path::$HOME/miniconda3/bin"
-          echo "::add-path::$HOME/miniconda3/Scripts"
+          echo "$HOME/miniconda3/bin" >> $GITHUB_PATH
       - name: Install node
         run: |
           conda install nodejs=17.4
