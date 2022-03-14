@@ -16,5 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      - run: ls ${{ github.workspace }}
-      - run: ./build_tau_labextension.sh 
+      - name: Setup Conda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: 3.7 
+      - name: Test Conda
+        run: $CONDA/bin/conda list 
