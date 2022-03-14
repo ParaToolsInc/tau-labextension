@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "incremental": true,
     "jsx": "react-jsx",
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": true,
@@ -16,9 +16,10 @@
     "outDir": "lib",
     "rootDir": "src",
     "strict": true,
+    "sourceMap": true,
     "strictNullChecks": true,
     "target": "es2017",
-    "types": ["node"]
+    "types": []
   },
   "include": ["src/*", "src/*/*", "src/*/*/*"]
 }
