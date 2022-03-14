@@ -22,4 +22,8 @@ jobs:
           auto-update-conda: true
           python-version: 3.7 
       - name: Test Conda
-        run: $CONDA/bin/conda list 
+        run: $CONDA/bin/conda --version 
+      - name: Download Node
+        run: $CONDA/bin/conda install -y -c conda-forge nodejs=17.4.0
+      - name: Download JupyterLab
+        run: $CONDA/bin/conda install -y jupyterlab=3.2.9
