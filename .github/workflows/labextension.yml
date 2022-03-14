@@ -44,8 +44,9 @@ jobs:
       - name: Build the labextension
         run: |
           conda build -c conda-forge jupyterlab_tau_commander/recipe
+          ls /home/runner/miniconda3/conda-bld/noarch
       - name: Export labextension
         uses: actions/upload-artifact@v2
         if: always()
         with:
-          path: $HOME/miniconda3/conda-bld/noarch/jupyterlab_tau_commander-* 
+          path: /home/runner/miniconda3/conda-bld/noarch/jupyterlab_tau*.bz2 
