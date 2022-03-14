@@ -22,14 +22,16 @@ jobs:
           auto-update-conda: true
           python-version: 3.7 
       - name: Test Conda
-        run: $CONDA/bin/conda --version 
+        run: | 
+          export PATH=$PATH:$CONDA/bin
+          conda --version 
       - name: Download Node
-        run: $CONDA/bin/conda install -y -c conda-forge nodejs=17.4.0
+        run: conda install -y -c conda-forge nodejs=17.4.0
       - name: Download JupyterLab
-        run: $CONDA/bin/conda install -y jupyterlab=3.2.9
+        run: conda install -y jupyterlab=3.2.9
       - name: Get node modules
-        run: $CONDA/bin/jlpm
+        run: jlpm
       - name: Build Extension
-        run: $CONDA/bin/jlpm run build
+        run: jlpm run build
       - name: List packages
         run: ls
