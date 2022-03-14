@@ -26,6 +26,8 @@ jobs:
         shell: bash
         run: |
           echo "$HOME/miniconda3/bin" >> $GITHUB_PATH
+          echo "$GITHUB_PATH"
+          echo "$HOME/miniconda3/bin"
       - name: Install node
         run: |
           conda install -c conda-forge nodejs=17.4
@@ -37,5 +39,7 @@ jobs:
           conda install -y -c conda-forge conda-build
       - name: Build the extension
         run: |
+          echo "$GITHUB_PATH"
+          ls $HOME/miniconda3/bin
           jlpm
           jlpm run build
