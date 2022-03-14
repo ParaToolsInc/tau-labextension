@@ -30,7 +30,4 @@ jobs:
       - name: Build the extension
         run: |
           jlpm
-          pwd
-          ls
-          tsc --traceResolution 
           jlpm run build
