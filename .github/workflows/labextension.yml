@@ -30,7 +30,10 @@ jobs:
       - name: Download JupyterLab
         run: conda install -y jupyterlab=3.2.9
       - name: Get node modules
-        run: jlpm
+        run: |
+          echo $PATH
+          ls $CONDA/bin
+          jlpm
       - name: Build Extension
         run: jlpm run build
       - name: List packages
