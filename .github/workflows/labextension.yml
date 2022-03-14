@@ -32,8 +32,8 @@ jobs:
       - name: Get node modules
         run: |
           export jlpm=$CONDA/bin/jlpm
-          $jlpm
+          "$jlpm"
       - name: Build Extension
-        run: $jlpm run build
+        run: "$jlpm" run build
       - name: List packages
         run: ls
