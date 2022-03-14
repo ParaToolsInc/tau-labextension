@@ -30,4 +30,5 @@ jobs:
       - name: Build the extension
         run: |
           jlpm
+          tsc --traceResolution | grep "target/"
           jlpm run build
