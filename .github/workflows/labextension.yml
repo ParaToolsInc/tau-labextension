@@ -23,17 +23,14 @@ jobs:
           python-version: 3.7 
       - name: Test Conda
         run: | 
-          export PATH=$PATH:$CONDA/bin
           conda --version 
       - name: Download Node
         run: conda install -y -c conda-forge nodejs=17.4.0
       - name: Download JupyterLab
         run: conda install -y jupyterlab=3.2.9
-      - name: Get node modules
-        run: |
-          export jlpm=$CONDA/bin/jlpm
-          "$jlpm"
       - name: Build Extension
-        run: "$jlpm" run build
+        run: |
+          jlpm
+          jlpm run build
       - name: List packages
         run: ls
