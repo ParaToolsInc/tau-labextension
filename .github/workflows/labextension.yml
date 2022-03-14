@@ -28,7 +28,7 @@ jobs:
           echo "$HOME/miniconda3/bin" >> $GITHUB_PATH
       - name: Install node
         run: |
-          conda install nodejs=17.4
+          conda install -c conda-forge nodejs=17.4
       - name: Install jupyterlab
         run: |
           conda install jupyterlab=3.2.9
