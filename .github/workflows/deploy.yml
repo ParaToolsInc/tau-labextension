@@ -1,0 +1,27 @@
+
+on:
+  push:
+    tags:
+      - '*'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          # Required, workflow file name or ID
+          workflow: labextension.yml
+          workflow_conclusion: success
+        run: |
+          ls artifact
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: 'artifact/*'
+
+
