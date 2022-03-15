@@ -46,3 +46,5 @@ jobs:
       - name: Export labextension
         uses: actions/upload-artifact@v2
         if: always()
+        with:
+          path: /home/runner/miniconda3/conda-bld/noarch/jupyterlab_tau*.bz2 
