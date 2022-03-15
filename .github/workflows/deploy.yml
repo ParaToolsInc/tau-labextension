@@ -13,9 +13,9 @@ jobs:
           # Required, workflow file name or ID
           workflow: labextension.yml
           workflow_conclusion: success
+      - name: List artifacts
         run: |
           ls artifact
-
       - name: Release
         uses: softprops/action-gh-release@v1
         env:
