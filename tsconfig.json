@@ -16,6 +16,7 @@
     "outDir": "lib",
     "rootDir": "src",
     "strict": true,
+    "sourceMap": true,
     "strictNullChecks": true,
     "target": "es2017",
     "types": []

@@ -1,0 +1,68 @@
+name: labextension
+
+on:
+  push:
+    branches:
+    - '*'
+    tags:
+    - '*'
+  pull_request:
+    branches:
+    - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Miniconda
+        shell: bash
+        run: |
+          MINICONDA_FILENAME=Miniconda3-latest-Linux-x86_64.sh
+          curl -L "https://repo.continuum.io/miniconda/$MINICONDA_FILENAME" -o $MINICONDA_FILENAME
+          bash ${MINICONDA_FILENAME} -b -f -p $HOME/miniconda3
+      - name: Setup paths
+        shell: bash
+        run: |
+          echo "$HOME/miniconda3/bin" >> $GITHUB_PATH
+          ls
+          pwd
+      - name: Install node
+        run: |
+          conda install -c conda-forge nodejs=17.4
+      - name: Install jupyterlab
+        run: |
+          conda install jupyterlab=3.2.9
+      - name: Install conda-build
+        run: |
+          conda install -y -c conda-forge conda-build
+      - name: Build the extension
+        run: |
+          jlpm
+          jlpm run build
+      - name: Build the labextension
+        run: |
+          conda build -c conda-forge jupyterlab_tau_commander/recipe
+          ls /home/runner/miniconda3/conda-bld/noarch
+      - name: Export labextension
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          path: /home/runner/miniconda3/conda-bld/noarch/jupyterlab_tau*.bz2 
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/download-artifact@v2
+      - name: Show artifacts
+        working-directory: artifact
+        run: ls -RGla
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: 'artifact/*'
