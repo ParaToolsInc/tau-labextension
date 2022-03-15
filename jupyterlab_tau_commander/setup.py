@@ -6,7 +6,7 @@ from setuptools import setup
 setup_args = dict(
     name             = 'jupyterlab_tau_commander',
     description      = 'A JupyterLab Extension for Tau Commander.',
-    version          = '0.1.0',
+    version          = '1.0.0',
     packages         = ['jupyterlab_tau_commander', ],
     entry_points     = {'console_scripts': [
                             'tau_commander-lab = jupyterlab_tau_commander.labapp:main',
