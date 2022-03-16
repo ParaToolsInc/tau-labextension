@@ -1,7 +1,7 @@
 {% set data = load_setup_py_data() %}
 
 package:
-  name: jupyterlab_tau_commander
+  name: tau-labextension 
   version: {{ data.get('version') }}
   
 source:
@@ -10,8 +10,8 @@ source:
 build:
   noarch: python
   entry_points:
-    - tau_commander-lab = jupyterlab_tau_commander.labapp:main
-    - tau_commander-labextension = jupyterlab_tau_commander.labextensionapp:main
+    - tau-lab = tau_labextension.labapp:main
+    - tau-labextension = tau_labextension.labextensionapp:main
 
 requirements:
   build:
@@ -28,7 +28,7 @@ requirements:
     - bqplot >=0.10.5
 
 about:
-  home: https://github.com/platinumcd/jupyterlab_tau_commander
+  home: https://github.com/ParaToolsInc/tau-labextension
   license: BSD 3-Clause
   license_file: LICENSE
   summary: {{ data.get('description') }}
