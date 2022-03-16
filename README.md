@@ -28,7 +28,7 @@ conda install -c platinumcd tau-labextension
 To remove the extension, execute:
 
 ```bash
-pip uninstall tau-labextension 
+conda uninstall tau-labextension 
 ```
 
 
