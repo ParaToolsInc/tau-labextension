@@ -2,7 +2,7 @@
 $PYTHON -m pip install --no-deps --ignore-installed .
 
 export JUPYTERLAB_DIR=$PREFIX/share/jupyter/tau_commander
-export EXTENSION_LOCATION=/home/runner/work/tau-labextension/tau-labextension
+export EXTENSION_LOCATION=/Users/cfd/tau_jupyter/tau_labextension/
 
 # Extensions to install
 export NODE_OPTIONS=--max-old-space-size=16000

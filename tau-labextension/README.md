@@ -1,4 +1,4 @@
-# JupyterLab Tau Commander
+# JupyterLab tau-labextension
 
 Conda recipe to package JupyterLab with the following preinstalled extensions:
 
@@ -7,8 +7,8 @@ Conda recipe to package JupyterLab with the following preinstalled extensions:
 
 The package created has two commands:
 
-* `tau_commander-lab` equivalent for the bundle to `jupyter lab`
-* `tau_commander-labextension` equivalent for the bundle to `jupyter labextension`
+* `tau-labextension-lab` equivalent for the bundle to `jupyter lab`
+* `tau-labextension-labextension` equivalent for the bundle to `jupyter labextension`
 
 This means that, if the user has `nodejs` installed and internet access, he can manage
 extensions as with the standard JupyterLab.
@@ -22,7 +22,7 @@ set of extensions.
 
 Note: If users are operating in an online environment, they 
 would still be able to add/remove extensions themselves after installation.
-In this case, they will have to use the `tau_commander-labextension` command instead of the standard `jupyter labextension` one.
+In this case, they will have to use the `tau-labextension-labextension` command instead of the standard `jupyter labextension` one.
 
 ### Offline Installation
 
@@ -70,18 +70,18 @@ tells `conda` to look in the `conda-bld` directory for packages. This step requi
 configured `conda` channels, but not `nodejs` or an `npm` repository.
 
 ```bash
-conda create -n test_tau_commander_lab python>=3.5
-conda activate test_tau_commander_lab
-conda install jupyterlab_tau_commander --use-local
+conda create -n test_tau-labextension_lab python>=3.5
+conda activate test_tau-labextension_lab
+conda install tau-labextension --use-local
 ```
 
 Launch JupyterLab with preinstalled extensions
 
 ```bash
-tau_commander-lab
+tau-labextension-lab
 ```
 
-Open `notebooks/test_jupyterlab_tau_commander.ipynb`. Both `ipywidgets` and `bqplot`
+Open `notebooks/test_jupyterlab_tau-labextension.ipynb`. Both `ipywidgets` and `bqplot`
 extensions should be working without additional intervention.
 
 Comment: 
@@ -91,7 +91,7 @@ by sending the `*.tar.bz2` archive file found in the `anaconda/conda-bld/noarch`
 using the following command (provided he has all dependencies fullfilled):
 
 ```bash
-conda install jupyterlab_tau_commander
+conda install tau-labextension
 ```
 
 ## References

@@ -4,17 +4,17 @@
 from setuptools import setup
 
 setup_args = dict(
-    name             = 'jupyterlab_tau_commander',
+    name             = 'tau-labextension',
     description      = 'A JupyterLab Extension for Tau Commander.',
     version          = '1.0.0',
-    packages         = ['jupyterlab_tau_commander', ],
+    packages         = ['tau_labextension', ],
     entry_points     = {'console_scripts': [
-                            'tau_commander-lab = jupyterlab_tau_commander.labapp:main',
-                            'tau_commander-labextension = jupyterlab_tau_commander.labextensionapp:main',
+                            'tau-lab = tau_labextension.labapp:main',
+                            'tau-labextension = tau_labextension.labextensionapp:main',
                         ]},
     author           = 'Cameron Durbin',
     author_email     = 'cfd@paratools.com',
-    url              = 'https://github.com/platinumcd/jupyterlab_tau_commander',
+    url              = 'https://github.com/ParaToolsInc/tau-labextension',
     install_requires = ['jupyterlab', ],
     license          = 'BSD 3-Clause',
     platforms        = "Linux, Mac OS X, Windows",
