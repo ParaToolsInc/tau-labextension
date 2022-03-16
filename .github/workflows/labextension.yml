@@ -4,6 +4,8 @@ on:
   push:
     branches:
     - '*'
+    tags:
+    - '*'
   pull_request:
     branches:
     - '*'
@@ -43,6 +45,13 @@ jobs:
           ls /home/runner/miniconda3/conda-bld/noarch
       - name: Export labextension
         uses: actions/upload-artifact@v2
-        if: always()
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           path: /home/runner/miniconda3/conda-bld/noarch/tau-labextension*.bz2 
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: 'artifact/tau_labextension*'
