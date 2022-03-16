@@ -1,17 +1,26 @@
+<div align='center'>
+  
 # Tau JupyterLab Extension
 
 A JupyterLab extension for Tau Commander.
 
+</div>
+  
+## About
+
+This package provides a JupyterLab extension to manage TAU projects, targets, applications, measurements, experiments, and trials. It also provides a display for information from the application performance data. 
+
 ## Requirements
 
-* JupyterLab >= 3.0
+JupyterLab >= 3.2.9
 
 ## Install
 
 To install the extension, execute:
 
 ```bash
-pip install tau_labextension
+conda install -c platinumcd jupyterlab_tau_commander
+
 ```
 
 ## Uninstall
@@ -19,7 +28,7 @@ pip install tau_labextension
 To remove the extension, execute:
 
 ```bash
-pip uninstall tau_labextension
+pip uninstall jupyterlab_tau_commander
 ```
 
 
