@@ -1,5 +1,5 @@
 {
-  "name": "tau-labextension",
+  "name": "lab-build",
   "version": "0.1.0",
   "description": "A JupyterLab extension for Tau Commander.",
   "keywords": [
@@ -72,7 +72,7 @@
   "styleModule": "style/index.js",
   "jupyterlab": {
     "extension": true,
-    "outputDir": "tau_labextension/labextension"
+    "outputDir": "lab-build/labextension"
   },
   "jupyter-releaser": {
     "hooks": {

@@ -24,8 +24,6 @@ jobs:
         shell: bash
         run: |
           echo "$HOME/miniconda3/bin" >> $GITHUB_PATH
-          ls
-          pwd
       - name: Install node
         run: |
           conda install -c conda-forge nodejs=17.4
@@ -41,10 +39,10 @@ jobs:
           jlpm run build
       - name: Build the labextension
         run: |
-          conda build -c conda-forge jupyterlab_tau_commander/recipe
+          conda build -c conda-forge tau-labextension/recipe
           ls /home/runner/miniconda3/conda-bld/noarch
       - name: Export labextension
         uses: actions/upload-artifact@v2
         if: always()
         with:
-          path: /home/runner/miniconda3/conda-bld/noarch/jupyterlab_tau*.bz2 
+          path: /home/runner/miniconda3/conda-bld/noarch/tau-labextension*.bz2 

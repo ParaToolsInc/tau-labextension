@@ -12,7 +12,6 @@ jobs:
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          # Required, workflow file name or ID
           workflow: labextension.yml
           workflow_conclusion: success
       - name: List artifacts
@@ -23,6 +22,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: 'artifact/*'
-
-
+          files: 'artifact/tau-labextension*'
