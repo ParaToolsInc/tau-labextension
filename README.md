@@ -19,7 +19,7 @@ JupyterLab >= 3.2.9
 To install the extension, execute:
 
 ```bash
-conda install -c platinumcd jupyterlab_tau_commander
+conda install -c platinumcd tau-labextension
 
 ```
 
@@ -28,7 +28,7 @@ conda install -c platinumcd jupyterlab_tau_commander
 To remove the extension, execute:
 
 ```bash
-pip uninstall jupyterlab_tau_commander
+pip uninstall tau-labextension 
 ```
 
 
