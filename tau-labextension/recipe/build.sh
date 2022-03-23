@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 $PYTHON -m pip install --no-deps --ignore-installed .
 
-export JUPYTERLAB_DIR=$PREFIX/share/jupyter/tau_commander
+export JUPYTERLAB_DIR=$PREFIX/share/jupyter/tau-labextension
 export EXTENSION_LOCATION=/home/runner/work/tau-labextension/tau-labextension
 
 # Extensions to install
