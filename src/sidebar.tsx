@@ -60,7 +60,7 @@ export class Sidebar extends Widget {
       ['%reset -f',
        'import os',
        'import sys',
-       'package_dir = os.path.join(os.environ.get("HOME"), "src/packages")',
+       'package_dir = os.path.join(os.environ.get("INSTALLDIR"), "packages")',
        'sys.path.insert(0, package_dir)',
        'from taucmdr.kernel import *'
       ].map((code) => {
